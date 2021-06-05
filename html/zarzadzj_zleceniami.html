@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <title>Zarządzaj zleceniami</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.png" />
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- font awesome, google fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&family=Dancing+Script&display=swap"
+        rel="stylesheet">
+    <!-- style CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.css" />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- navigation -->
+    <div class="navigation">
+
+        <nav class="navbar">
+            <!-- menu block-->
+            <ul class="menu">
+                <li class="menu__item">
+                    <a href="/main" id="main-page" class="js-menu__link menu__link"><span
+                            class="first-line">Strona</span> główna</a>
+                </li>
+                <li class="menu__item">
+                    <a href="/plan" id="plan-page" class="js-menu__link menu__link"><span
+                        class="first-line">Zaplanuj</span> zlecenie</a>
+                </li>
+                <li class="menu__item">
+                    <a href="/supplies_list" id="supplies_list-page" class="js-menu__link menu__link"><span
+                            class="first-line">Wykaz</span>
+                        zaopatrzenia</a>
+                </li>
+                <li class="menu__item">
+                    <a href="/orders_management" id="order_management-page" class="js-menu__link menu__link"><span
+                            class="first-line">Zarządzaj</span>
+                        zleceniami</a>
+                </li>
+                <li class="menu__item">
+                    <a href="" id="-page" class="js-menu__link menu__link"><span class="first-line">Zarządzaj</span>
+                        kontami</a>
+                </li>
+                <li class="menu__item">
+                    <a href="/logout" id="logout-page" class="js-menu__link menu__link">Wyloguj<i
+                            class="fas fa-sign-out-alt"></i></a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </div>
+    <!-- /navigation -->
+
+
+
+
+
+    <!-- alert -->
+    <div class="alert-container">
+
+        <div class="alert alert--success">
+            Super! Wszystko gra.
+        </div>
+
+        <div class="alert alert--danger">
+            Ups! Coś poszło nie tak...
+        </div>
+
+    </div>
+    <!-- /alert -->
+
+
+
+    <!-- container -->
+    <div class="container">
+
+        <!-- buttons -->
+        <div class="buttons">
+            <button class="button button--edit">
+                <a href="#" id="portfolio-page" class="button__link"><span class="first-line">Edytuj zlecenia<i
+                            class="fas fa-pen"></i></a>
+            </button>
+
+            <button class="button button--confirm">
+                <a href="#" id="contact-page" class="button__link">Potwierdź zlecenia<i class="fas fa-check"></i></a>
+            </button>
+
+            <button class="button button--delete">
+                <a href="#" id="contact-page" class="button__link">Usuń zlecenia<i class="fas fa-trash-alt"></i></a>
+            </button>
+        </div>
+        <!-- /buttons -->
+
+
+
+
+
+        <!-- table -->
+        <div class="table">
+            <div class="table__title">
+                <h2>Wykaz zleceń</h2>
+            </div>
+
+            <table class="table__content" id="mytable" style="width:100%">
+                <thead class="table__head">
+                    <th scope="col" style="width: 10px;">ID zlecenia</th>
+                    <th scope="col" style="width: 70px;">Placówka</th>
+                    <th scope="col" style="width: 75px;">Usługi</th>
+                    <th scope="col" style="width: 25px;">Data</th>
+                    <th scope="col" style="width: 15px;">Czas</th>
+                    <th scope="col" style="width: 35px;">Status</th>
+                </thead>
+                <tbody class="table__body">
+                    <tr>
+                        <td>1</td>
+                        <td>Szkoła Podstawowa im. Bolesława Krzywoustego w Kamieńcu Wrocławskim</td>
+                        <td>Przegląd gaśnicy</td>
+                        <td>2021-06-24</td>
+                        <td>5</td>
+                        <td>Do potwierdzenia</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Szkoła Podstawowa im. Bolesława Krzywoustego w Kamieńcu Wrocławskim</td>
+                        <td>Uzupełnienie oznakowania</td>
+                        <td>2021-06-24</td>
+                        <td>5</td>
+                        <td>Do potwierdzenia</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Szkoła Podstawowa im. Bolesława Krzywoustego w Kamieńcu Wrocławskim</td>
+                        <td>Pomiar parametrów hydrantów zewnętrznych</td>
+                        <td>2021-06-24</td>
+                        <td>5</td>
+                        <td>Do potwierdzenia</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Przedszkole nr 92</td>
+                        <td>Wymiana szafki hydrantowej</td>
+                        <td>2021-06-10</td>
+                        <td>6</td>
+                        <td>Do potwierdzenia</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Przedszkole nr 92</td>
+                        <td>Montaż oznakowania</td>
+                        <td>2021-06-10</td>
+                        <td>6</td>
+                        <td>Do potwierdzenia</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Przedszkole nr 92</td>
+                        <td>Badanie ciśnieniowe węży płasko składanych</td>
+                        <td>2021-06-10</td>
+                        <td>6</td>
+                        <td>Do potwierdzenia</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /table -->
+
+    </div>
+    <!-- /container -->
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer__copyright">
+            <p class="footer__text">Maciej Adamski &#169 2021</p>
+        </div>
+    </footer>
+    <!-- /footer -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#mytable').DataTable({
+                "pagingType": "full_numbers",
+                "oLanguage": {
+                    "sSearch": "Szukaj",
+                    "oPaginate": {
+                        "sFirst": "Pierwsza",
+                        "sLast": "Ostatnia",
+                        "sNext": "Następna",
+                        "sPrevious": "Poprzednia"
+                    },
+                    "sLengthMenu": "Wyświetlaj _MENU_ pozycji",
+                    "sInfo": "Wyświetlono od _START_. do _END_. z _TOTAL_ pozycji",
+                    "sZeroRecords": "Brak danych do wyświetlenia",
+                    "sInfoEmpty": "Wyświetlono od 0. do 0. z 0 pozycji",
+                    "sLoadingRecords": "Pobieram zawartość",
+                    "sInfoFiltered": "(szukano dla _MAX_ pozycji)",
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

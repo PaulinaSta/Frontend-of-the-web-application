@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <title>Zaplanuj zlecenie</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.png" />
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- font awesome, google fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&family=Dancing+Script&display=swap"
+        rel="stylesheet">
+    <!-- style CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.css" />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- navigation -->
+    <div class="navigation">
+
+        <nav class="navbar">
+            <!-- menu block-->
+            <ul class="menu">
+                <li class="menu__item">
+                    <a href="/main" id="main-page" class="js-menu__link menu__link"><span
+                            class="first-line">Strona</span> główna</a>
+                </li>
+                <li class="menu__item">
+                    <a href="/plan" id="plan-page" class="js-menu__link menu__link"><span
+                        class="first-line">Zaplanuj</span> zlecenie</a>
+                </li>
+                <li class="menu__item">
+                    <a href="/supplies_list" id="supplies_list-page" class="js-menu__link menu__link"><span
+                            class="first-line">Wykaz</span>
+                        zaopatrzenia</a>
+                </li>
+                <li class="menu__item">
+                    <a href="/orders_management" id="order_management-page" class="js-menu__link menu__link"><span
+                            class="first-line">Zarządzaj</span>
+                        zleceniami</a>
+                </li>
+                <li class="menu__item">
+                    <a href="" id="-page" class="js-menu__link menu__link"><span class="first-line">Zarządzaj</span>
+                        kontami</a>
+                </li>
+                <li class="menu__item">
+                    <a href="/logout" id="logout-page" class="js-menu__link menu__link">Wyloguj<i
+                            class="fas fa-sign-out-alt"></i></a>
+                </li>
+            </ul>
+            <!-- burger block-->
+            <div class="burger">
+                <div class="burger__lines">
+                    <div class="burger__line burger__line--1"></div>
+                    <div class="burger__line burger__line--2"></div>
+                    <div class="burger__line burger__line--3"></div>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+    <!-- /navigation -->
+
+
+    <!-- alert -->
+    <div class="alert-container">
+
+        <div class="alert alert--success">
+            Super! Wszystko gra.
+        </div>
+
+        <div class="alert alert--danger">
+            Ups! Coś poszło nie tak...
+        </div>
+
+    </div>
+    <!-- /alert -->
+
+
+
+
+    <!-- container -->
+    <div class="container">
+
+
+        <!-- form -->
+        <form class="form" method="POST" action="">
+            <!-- dodałam klasę "form" do form -->
+            <input id="csrf_token" name="csrf_token" type="hidden"
+                value="ImRmM2VmZDAwYzUyMWQyMTdhYzI3YWNiZTgyOWFlZTM3YzNkNWU2MTEi.YJGnug.i1GDU_fJQlqZ9nTHMGixdh2AeDQ">
+            <fieldset class="form__container">
+
+                <!-- dodałam klasę "form__container" do fieldset i usunęłam "form-group" -->
+                <legend class="form__title">Zaplanuj zlecenie</legend>
+                <!-- dodałam klasę "form__title" do legend i usunęłam "text-center border-bottom mt-10 mb-10" -->
+
+                <div class="form-group form-group--company">
+                    <!-- dodałam klasę "form-group--company" do div -->
+                    <label class="form-control-label ml-2" for="company">Placówka</label>
+                    <select class="form-control form-control-lg" id="company" name="company">
+                        <option value="1">Szkoła Podstawowa im. Bolesława Krzywoustego w Kamieńcu
+                            Wrocławskim</option>
+                        <option value="2">Sąd Rejonowy Krzyki</option>
+                        <option value="3">Przedszkole nr 92</option>
+                        <option value="4">Przedszkole nr 56</option>
+                        <option value="5">Fundacja Wsparcie</option>
+                    </select>
+                </div>
+                <div class="form-group form-group--service">
+                    <!-- dodałam klasę "form-group--service" do div -->
+                    <label class="form-control-label ml-2" for="service">Rodzaj usługi</label>
+
+                    <table class="form-control form-control-lg form-control--service" id="service">
+                        <!-- dodałam klasę "form-control--service" do table -->
+                        <tr>
+                            <th><label for="service-0">Przegląd gaśnicy</label></th>
+                            <td><input id="service-0" name="service" type="checkbox" value="1"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-1">Wymiana węża wylotowego</label></th>
+                            <td><input id="service-1" name="service" type="checkbox" value="2"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-2">Wymiana paska wieszaka gaśnicy</label></th>
+                            <td><input id="service-2" name="service" type="checkbox" value="3"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-3">Uzupełnienie oznakowania</label></th>
+                            <td><input id="service-3" name="service" type="checkbox" value="4"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-4">Przegląd drzwi przeciwpożarowych</label></th>
+                            <td><input id="service-4" name="service" type="checkbox" value="5"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-5">Wymiana zaworu w hydrancie
+                                    wewnętrznym</label></th>
+                            <td><input id="service-5" name="service" type="checkbox" value="6"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-6">Wymiana szafki hydrantowej</label></th>
+                            <td><input id="service-6" name="service" type="checkbox" value="7"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-7">Montaż gaśnicy</label></th>
+                            <td><input id="service-7" name="service" type="checkbox" value="8"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-8">Montaż specjalistyczny</label></th>
+                            <td><input id="service-8" name="service" type="checkbox" value="9"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-9">Montaż oznakowania</label></th>
+                            <td><input id="service-9" name="service" type="checkbox" value="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-10">Badanie ciśnieniowe węży płasko
+                                    składanych</label></th>
+                            <td><input id="service-10" name="service" type="checkbox" value="11">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-11">Badanie ciśnieniowe węży
+                                    półsztywnych</label></th>
+                            <td><input id="service-11" name="service" type="checkbox" value="12">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-12">Przegląd agregatu gaśniczego</label></th>
+                            <td><input id="service-12" name="service" type="checkbox" value="13">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-13">Pomiar parametrów hydrantów
+                                    wewnętrznych</label></th>
+                            <td><input id="service-13" name="service" type="checkbox" value="14">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-14">Pomiar parametrów hydrantów
+                                    zewnętrznych</label></th>
+                            <td><input id="service-14" name="service" type="checkbox" value="15">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-15">Pomiary wykonane przy jednoczesnym poborze
+                                    wody z dwóch hydrantów wewnętrznych</label></th>
+                            <td><input id="service-15" name="service" type="checkbox" value="16">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-16">Pomiary wykonane przy jednoczesnym poborze
+                                    wody z dwóch hydrantów zewnętrznych</label></th>
+                            <td><input id="service-16" name="service" type="checkbox" value="17">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-17">Pomiary wykonane przy jednoczesnym poborze
+                                    wody z czterech hydrantów wewnętrznych</label></th>
+                            <td><input id="service-17" name="service" type="checkbox" value="18">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="service-18">Pomiary wykonane przy jednoczesnym poborze
+                                    wody z czterech hydrantów zewnętrznych </label></th>
+                            <td><input id="service-18" name="service" type="checkbox" value="19">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-group form-group--date">
+                    <!-- dodałam klasę "form-group--date" do div -->
+                    <label class="form-control-label ml-2" for="date">Data</label>
+
+                    <input class="form-control form-control-lg" id="date" name="date" type="date" value="">
+                </div>
+                <div class="form-group form-group--time">
+                    <!-- dodałam klasę "form-group--time" do div -->
+                    <label class="form-control-label ml-2" for="time">Czas</label>
+
+                    <input class="form-control form-control-lg" id="time" name="time" required type="text" value="">
+                </div>
+            </fieldset>
+
+            <div class="form-gruop form__submit">
+                <!-- dodałam klasę "form__submit" do div -->
+                <input class="btn" id="submit" name="submit" type="submit" value="Zaplanuj">
+                <!-- <button class="btn" id="submit">Zaplanuj<i class="fas fa-calendar-check"></i></button> -->
+            </div>
+        </form>
+        <!-- /form -->
+
+    </div>
+    <!-- /container -->
+
+
+
+
+
+
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer__copyright">
+            <p class="footer__text">Maciej Adamski &#169 2021</p>
+        </div>
+    </footer>
+    <!-- /footer -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#mytable').DataTable({
+                "pagingType": "full_numbers",
+                "oLanguage": {
+                    "sSearch": "Szukaj",
+                    "oPaginate": {
+                        "sFirst": "Pierwsza",
+                        "sLast": "Ostatnia",
+                        "sNext": "Następna",
+                        "sPrevious": "Poprzednia"
+                    },
+                    "sLengthMenu": "Wyświetlaj _MENU_ pozycji",
+                    "sInfo": "Wyświetlono od _START_. do _END_. z _TOTAL_ pozycji",
+                    "sZeroRecords": "Brak danych do wyświetlenia",
+                    "sInfoEmpty": "Wyświetlono od 0. do 0. z 0 pozycji",
+                    "sLoadingRecords": "Pobieram zawartość",
+                    "sInfoFiltered": "(szukano dla _MAX_ pozycji)",
+                }
+
+            });
+
+        });
+    </script>
+
+    <!-- jQuery, JavaScript  -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="/js/app.js"></script>
+
+</body>
+
+</html>
